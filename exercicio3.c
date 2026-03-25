@@ -1,5 +1,9 @@
 #include <stdio.h>
 
-int main() {
-    printf("Letras do alfabeto de a até z\n");
+void main(){
+    char letra;
+
+    for (letra = 'a'; letra <= 'z'; ++letra) {
+        printf("%c \n", letra);
+    }
 }

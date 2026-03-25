@@ -1,11 +1,10 @@
 #include <stdio.h>
+#include <ctype.h>
 
-int main() {
-
-    char letra;
-
+void main(){
+    char minuscula;
     printf("Digite uma letra minuscula: ");
-    scanf("%c", &letra);
-    printf("Versao maiuscula: %c ", letra - 32);
-    return 0;
+    scanf("%c", &minuscula);
+    char maiuscula = minuscula - 32;
+    printf("A letra maiuscula correspondente e: %c \n", maiuscula);
 }

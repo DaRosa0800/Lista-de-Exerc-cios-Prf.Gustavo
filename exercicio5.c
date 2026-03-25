@@ -1,16 +1,10 @@
 #include <stdio.h>
 
-int main() {
+void main(){
     char letra;
-
     printf("Digite uma letra: ");
     scanf("%c", &letra);
-
-    printf("Contagem regressiva até a letra 'a':\n ");
-    for(char  = letra, 1 >= 'a'; 1--) {
-        printf("%c", 1);
+    for(letra <= 'z'; letra >= 'a'; letra--){
+        printf("%c \n", letra);
     }
-    printf("\n");
-
-    return 0;
 }
