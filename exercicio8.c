@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+
+void main(){
+    char palavra[50];
+    printf("Digite uma palavra: ");
+    scanf("%s", &palavra);
+    int contador;
+    for (contador = 0; palavra[contador] != '\0'; contador++) {
+            printf("%c \n", palavra[contador]);
+    }
+}
