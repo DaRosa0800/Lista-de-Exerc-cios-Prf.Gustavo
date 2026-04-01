@@ -18,3 +18,4 @@ void main(){
     }
     printf("Quantidade de consoantes: %d \n", consoantes);
 }
+}
