@@ -1,76 +1,113 @@
 #include <stdio.h>
 #include <string.h>
 
-void main(){
-char contarCaracteres(char palavra){
-    palavra[50];
+int contarCaracteres(){
+    
+    char palavra[50];
+    
     printf("Digite uma palavra: ");
     scanf("%s", &palavra);
+    
     int contador;
+    
     for (contador = 0; palavra[contador]  != 0;) {
         contador++;
     }
-    printf("Quantidade de letras: %d \n", contador);
+    
+    printf("Quantidade de letras: %d\n", contador);
+    
+    return 0;
 }
 
 
-char contarVogais(char palavra2){
+int contarVogais(){
+    
     char palavra[50];
     int vogais = 0;
     int i;
+    
     printf("Digite uma palavra: ");
     scanf("%s", &palavra);
-    for (i = 0; palavra[i] != '\0'; i++) {
+    
+    for (i = 0; palavra[i] != '\0'; i++){
+        
         char c = palavra[i];
-        if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
+        
+        if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U'){
         vogais++;
         }
     }
+    
     printf("Quantidade de vogais: %d \n", vogais);
+
+    return 0;
+
 }
 
-char invertPalavra(char palavra3){
+char invertPalavra(){
+    
     char palavra[50];
     int i, tamanho;
+    
     printf("Digite uma palavra: ");
     scanf("%s", &palavra);
+    
     tamanho = strlen(palavra);
-    for(i = tamanho - 1; i >= 0; i--) {
+    
+    printf("A palavra invertida e: ");
+    
+    for(i = tamanho - 1; i >= 0; i--){
         printf("%c", palavra[i]);
     }
+    
+    printf("\n");
+    
+    return 0;
 }
-}
+
 
 
 
 void main(){
+    
     int opcao;
-    char palavra[50];
-    char palavra2[50];
-    char palavra3[50];
-    printf("======== 1 - Contar Caracteres ======== ");
-    printf("======== 2 - Contar Vogais ======== ");
-    printf("======== 3 - Inverter Palavra ======== ");
-    printf("======== 4 - Sair ======== ");
-    printf("Insira uma opcao: ");
+    
+    do {
+    
+    printf("\n=== 1 - Contar Caracteres === \n");
+    printf("=== 2 - Contar Vogais === \n");
+    printf("=== 3 - Inverter Palavra === \n");
+    printf("=== 4 - Sair === \n");    
+    printf("\nInsira uma opcao: \n");
+    
     scanf("%d", &opcao);
-    while(opcao != 4){
-        switch(opcao){
-            case 1:
-            contarCaracteres(palavra);
-            break;
-            case 2:
-            contarVogais(palavra2);
-            break;
-            case 3:
-            invertPalavra(palavra3);
-            break;
-            case 4:
-            printf("Saindo do programa");
-            break;
-            default:
-            printf("Opcao invalida");
-        }
+    
+    switch(opcao){
+        
+        case 1:
+        contarCaracteres();
+        
+        break;
+        case 2:
+        contarVogais();
+        
+        break;
+        case 3:
+        invertPalavra();
+        
+        break;
+        case 4:
+        
+        printf("Saindo do programa");
+        
+        break;
+        default:
+        printf("Opcao invalida\n");
+        
     }
 
+}
+
+while (opcao != 4);
+    
 }
