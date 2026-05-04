@@ -3,6 +3,7 @@
 void main() {
     
     int numeros[5];
+    int soma;
     
     for (int i = 0; i < 5; i++) {
     
@@ -11,13 +12,8 @@ void main() {
     
     }
     
-    for (int i = 0; i < 5; i++) {
-        
-        if(numeros[i] < 0) {
-        
-            numeros[i] = 0;
-            printf("%d", numeros[i]);
-        
-        }
+    soma = numeros[0] + numeros[1] + numeros[2] + numeros[3] + numeros[4];
+    
+    printf("%d ", soma);
+    
     }
-}
