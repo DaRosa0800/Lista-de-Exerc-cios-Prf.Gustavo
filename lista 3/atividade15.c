@@ -1,33 +1,45 @@
 #include <stdio.h>
+#include <string.h>
 
-int main(){
+int main() {
+    
+    char frase[100];
+    char palavra[20];
+    int i, j, k;
+    int ocorrencias = 0;
+    int tamanho_frase, tamanho_palavra;
 
-    int contagem[7] = {0};
+    printf("Digite a frase: ");
+    fgets(frase, sizeof(frase), stdin);
+    frase[strcspn(frase, "\n")] = '\0';
 
-    for(int i = 0; i < 10; i++){
-        
-        int lado;
-        
-        printf("Voce jogou o dado! Insira o lado que caiu: ");
-        scanf("%d", &lado);
+    printf("Digite a palavra: ");
+    fgets(palavra, sizeof(palavra), stdin);
 
-        if(lado>=1 && lado<=6){
+    palavra[strcspn(palavra, "\n")] = '\0';
+
+    tamanho_frase = strlen(frase);
+    tamanho_palavra = strlen(palavra);
+
+    for (i = 0; i <= tamanho_frase - tamanho_palavra; i++) {
         
-            contagem[lado]++;
+        for (j = 0; j < tamanho_palavra; j++) {
         
+            if (frase[i + j] != palavra[j]) {
+        
+                break;
+        
+            }
         }
         
-        else{
-        
-            printf("Valor invalido.\n");
-            i--;
+        if (j == tamanho_palavra) {
+            
+            ocorrencias++;
         
         }
     }
 
-    for(int i = 1; i <= 6; i++){
-        
-        printf("Lado %d: %d\n", i, contagem[i]);
-        
-        }
+    printf("A palavra '%s' ocorre %d vezes na frase.\n", palavra, ocorrencias);
+
+    return 0;
 }
